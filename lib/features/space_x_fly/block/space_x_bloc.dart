@@ -11,7 +11,6 @@ class SpaceXBloc extends Bloc<SpaceXEvent, SpaceXState> {
       emit(SpaceXLoadingState());
       try {
         final result = await _spaceXRepository.getFlyData();
-        print("asdasdasdas");
         emit(SpaceXLoadedState(result));
       } catch (e) {
         emit(SpaceXErrorState(e.toString()));
